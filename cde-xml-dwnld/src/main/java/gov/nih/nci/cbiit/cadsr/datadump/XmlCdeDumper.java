@@ -46,7 +46,7 @@ public class XmlCdeDumper extends AbstractCDEDumper {
 
 			String xmlString = "";
 			//String strDataDirectory = getDirectory("xmldir");//ends with a path separator
-			String strDataDirectory = xmldir + System.lineSeparator();//ends with a path separator
+			String strDataDirectory = xmldir + File.separator;//ends with a path separator
 			
 			List<String> zipFiles = new ArrayList<String>(32);
 			String timeStr = getTimeStr();
