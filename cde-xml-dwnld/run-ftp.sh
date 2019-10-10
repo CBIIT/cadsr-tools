@@ -10,14 +10,14 @@ echo cwd: $cwd
 echo db_url: $db_url
 
 #create zip file
-java -Xmx4096m -jar ./target/cde-xml-dwnld-1.0.0.jar
+java -Xmx4096m -jar $WORKSPACE/cde-xml-dwnld/target/cde-xml-dwnld-1.0.0.jar
 archive=$(pwd)/archive
 mkdir -p $archive
 #echo archive $archive
 ftp_dir="${ftp_dir:-/caDSR_Downloads/CDE}"
 
 j=0
-var="`find ./xmldir/ -name 'xml_cde_*.zip' -type f -mtime -1`"
+var="`find $WORKSPACE/cde-xml-dwnld/xmldir/ -name 'xml_cde_*.zip' -type f -mtime -1`"
 #we have in $var some files with last day change date
 
 #the next shall be set up in the environment
