@@ -8,6 +8,7 @@ echo cwd: $cwd
 #export db_driver=oracle.jdbc.OracleDriver
 
 echo db_url: $db_url
+mkdir -p $WORKSPACE/cde-xml-dwnld/xmldir
 
 #create zip file
 java -Xmx4096m -jar $WORKSPACE/cde-xml-dwnld/target/cde-xml-dwnld-1.0.0.jar
