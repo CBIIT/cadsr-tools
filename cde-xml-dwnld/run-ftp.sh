@@ -8,12 +8,16 @@ echo cwd: $cwd
 #export db_driver=oracle.jdbc.OracleDriver
 
 echo db_url: $db_url
-mkdir -p $WORKSPACE/cde-xml-dwnld/xmldir
+
+archive=$WORKSPACE/cde-xml-dwnld/archive
+export xmldir=$WORKSPACE/cde-xml-dwnld/xmldir
+
+mkdir -p $archive
+mkdir -p $xmldir
 
 #create zip file
 java -Xmx4096m -jar $WORKSPACE/cde-xml-dwnld/target/cde-xml-dwnld-1.0.0.jar
-archive=$(pwd)/archive
-mkdir -p $archive
+
 #echo archive $archive
 ftp_dir="${ftp_dir:-/caDSR_Downloads/CDE}"
 

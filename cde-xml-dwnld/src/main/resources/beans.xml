@@ -25,5 +25,6 @@
     
     <bean name="xmlCDEDumper" class="gov.nih.nci.cbiit.cadsr.datadump.XMLCDEDumper" parent="abstractCDEDumper" >
         <property name="fileNamePrefix" value="xml_cde_" />
+        <property name="xmldir" value="${xmldir}" />
     </bean>
 </beans>

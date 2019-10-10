@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import oracle.xml.sql.OracleXMLSQLNoRowsException;
@@ -34,14 +35,19 @@ public class XmlCdeDumper extends AbstractCDEDumper {
 	public String getFileNamePrefix() {
 		return "xml_cde_";
 	}
-
+	//this is a path where to create XML files, taken from environment
+	@Value("${xmldir:xmldir}")
+	private String xmldir;
+	
 	public void doDump() {
 		try {
 			Connection con = connection;      
 			XMLGeneratorBean xmlBean = getXMLGeneratorBean(con);
 
 			String xmlString = "";
-			String strDataDirectory = getDirectory("xmldir");//ends with a path separator
+			//String strDataDirectory = getDirectory("xmldir");//ends with a path separator
+			String strDataDirectory = xmldir + System.lineSeparator();//ends with a path separator
+			
 			List<String> zipFiles = new ArrayList<String>(32);
 			String timeStr = getTimeStr();
 			try {
