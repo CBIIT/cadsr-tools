@@ -2,18 +2,19 @@
 echo $0
 cwd=`pwd`
 echo cwd: $cwd
-export db_credential=Nci_gue5t
-export db_user=guest
+#export db_credential=
+#export db_user=
 #export db_url=
-export db_driver=oracle.jdbc.OracleDriver
+#export db_driver=oracle.jdbc.OracleDriver
 
-echo db_url=$db_url
+echo db_url: $db_url
 
 #create zip file
 java -Xmx4096m -jar ./target/cde-xml-dwnld-1.0.0.jar
 archive=$(pwd)/archive
 mkdir -p $archive
 #echo archive $archive
+ftp_dir="${ftp_dir:-/caDSR_Downloads/CDE}"
 
 j=0
 var="`find ./xmldir/ -name 'xml_cde_*.zip' -type f -mtime -1`"
@@ -35,7 +36,7 @@ ftp -in >> /tmp/ftp.good 2>> /tmp/ftp.bad <<-EOF
 	open $ftp_host
 	user $ftp_user $ftp_cred
 	bin
-	cd /caDSR_Downloads/CDE
+	cd $ftp_dir
 	lcd $dirname
 	put $filename
 	quit

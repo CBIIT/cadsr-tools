@@ -26,6 +26,7 @@ Environment required:
 ftp_host
 ftp_user
 ftp_credential
+ftp_directory
 
 The utility runs java command to create a zip file with XML files in "xmldir" directory, 
 sends zip file to FTP site, 
