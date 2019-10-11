@@ -37,7 +37,8 @@ j=$(( $j + 1 ))
 dirname="`dirname $i`"
 filename="`basename $i`"
 echo dirname: $dirname, filename: $filename
-ftp -in >> /tmp/ftp.good 2>> /tmp/ftp.bad <<-EOF
+#ftp -in >> /tmp/ftp.good 2>> /tmp/ftp.bad <<-EOF
+/local/home/cadsrdocker/bin/ftp -in >> /tmp/ftp.good 2>> /tmp/ftp.bad <<-EOF
 	open $ftp_host
 	user $ftp_user $ftp_cred
 	bin
