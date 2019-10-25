@@ -1,0 +1,12 @@
+/target/
+/log/
+*application-*.properties
+.DS_Store
+*.DS_Store
+.settings
+downloanv*.xml
+*.launch
+# Java annotation processor (APT)
+.factorypath
+/xmldir
+.springBeans
