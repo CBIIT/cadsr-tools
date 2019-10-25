@@ -1,4 +1,4 @@
 # Project Title
 caDSR Tools
 ## Introduction
-This repository holds caDSR tools and utilities as different types of downloads.
+This is a branch of repository caDSR-tools, which tracks XML download caDSR CS/CSI components implementation.
