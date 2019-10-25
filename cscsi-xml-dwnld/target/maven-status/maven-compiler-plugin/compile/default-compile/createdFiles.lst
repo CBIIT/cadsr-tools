@@ -1,0 +1,8 @@
+gov/nih/nci/cadsr/cscsidump/DataElementRepository$1.class
+META-INF/spring-configuration-metadata.json
+gov/nih/nci/cadsr/cscsidump/DataElementRepository.class
+gov/nih/nci/cadsr/cscsidump/DBConfig.class
+gov/nih/nci/cadsr/cscsidump/CsCsiXmlMicroservice.class
+gov/nih/nci/cadsr/cscsidump/AbstractDAOOperations.class
+gov/nih/nci/cadsr/cscsidump/RequestFilter.class
+gov/nih/nci/cadsr/cscsidump/CsCsiXmlRunner.class

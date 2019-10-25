@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource",
+      "type": "gov.nih.nci.cadsr.cscsidump.DBConfig",
+      "sourceType": "gov.nih.nci.cadsr.cscsidump.DBConfig"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
