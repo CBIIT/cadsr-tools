@@ -70,7 +70,7 @@ public class CsCsiXmlRunner implements CommandLineRunner {
 		}
 	}
 	public String getFileNamePrefix() {
-		return "xml_cde_";
+		return "xml_cscsi_";
 	}
 	@Override
 	public void run(String... args) throws Exception {
