@@ -17,6 +17,7 @@ import java.util.zip.ZipOutputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Component;
@@ -33,7 +34,11 @@ public class CsCsiXmlRunner implements CommandLineRunner {
     @Autowired
     private DataElementRepository dataElemenRepository;
 	private static int BUFFER = 102400;
-    
+	
+	//this is a path where to create XML files, taken from environment
+	@Value("${xmldir:xmldir}")
+	private String xmldir;
+	
 	private void createZipFile(List<String> fileList, String zipFilename) throws Exception {
 		BufferedInputStream origin = null;
 		FileOutputStream dest = null;
@@ -74,7 +79,16 @@ public class CsCsiXmlRunner implements CommandLineRunner {
 	}
 	@Override
 	public void run(String... args) throws Exception {
-		String strDataDirectory = CsCsiXmlMicroservice.UPLOADED_FOLDER + File.separator;
+		String strDataDirectory = xmldir + File.separator;
+		logger.info("XML Directory: " + strDataDirectory);
+		File uploadeDir = new File(strDataDirectory);
+		if (! uploadeDir.exists())	{
+			uploadeDir.mkdirs();
+			logger.info("XML Directory created: " + uploadeDir.getAbsolutePath());
+		}
+		else {
+			logger.info("XML Directory found: " + uploadeDir.getAbsolutePath());
+		}
 		String timeStr = getTimeStr();
 		String currFilePath = strDataDirectory + getFileNamePrefix() + timeStr + ".xml";
 		dataElemenRepository.retrieveWriteClob(currFilePath);
