@@ -82,7 +82,10 @@ public class XmlCdeDumper extends AbstractCDEDumper {
 		//String qry = " SELECT PublicId , LongName ,  PreferredName  ,  PreferredDefinition  ,  Version  ,  WorkflowStatus  ,  ContextName  ,  ContextVersion  ,  Origin  ,  RegistrationStatus  ,  DataElementConcept  ,  ValueDomain  ,  ReferenceDocumentsList  ,  ClassificationsList  ,  AlternateNameList  ,  DataElementDerivation   FROM sbrext.DE_CDE1_XML_GENERATOR_VIEW where workflowstatus not like ('%RETIRED%') and upper(contextname) not in ('TEST', 'TRAINING')";
 
 		//This is XML using DE_CDE1_XML_GENERATOR_749VW as CDE Browser; new request JIRA CADSRMETA-771
-		String qry = " SELECT PublicId , LongName ,  PreferredName  ,  PreferredDefinition  ,  Version  ,  WorkflowStatus  ,  ContextName  ,  ContextVersion  ,  Origin  ,  RegistrationStatus  ,  DataElementConcept  ,  ValueDomain  ,  ReferenceDocumentsList  ,  ClassificationsList  ,  AlternateNameList  ,  DataElementDerivation " +
+		String qry = " SELECT PublicId , LongName ,  PreferredName  ,  PreferredDefinition  ,  Version  ,  WorkflowStatus  ,  "
+				+ "ContextName  ,  ContextVersion  ,  Origin  ,  RegistrationStatus  , \"dateModified\", "
+			+ "DataElementConcept  ,  ValueDomain  ,  ReferenceDocumentsList  ,  ClassificationsList  ,  "
+			+ "AlternateNameList  ,  DataElementDerivation " +
 			"FROM sbrext.DE_CDE1_XML_GENERATOR_749VW where workflowstatus not like ('%RETIRED%') and upper(contextname) not in ('TEST', 'TRAINING')";
 
 		xmlBean.setQuery(qry);
