@@ -1,8 +1,8 @@
-This is Maven springboot command line utility to generate XML CDE Released dump with CDE XML Download format.
+This is Maven spring boot command line utility (CommandLineRunner) to generate XML CDE Released dump with CDE XML Download format.
 
 To package:
 >mvn clean package
-It creates springboot cdereleased-1.0.1.jar which includes all dependencies.
+It creates spring boot cde-xml-dwnld-1.0.0.jar which includes all dependencies.
 
 Environment required:
 db_credential
@@ -10,16 +10,16 @@ db_user
 db_url
 db_driver=oracle.jdbc.OracleDriver
 
-Format of db_url:
+Format of Oracle db_url:
 jdbc:oracle:thin:@<url>:<port>:<OID>
+jdbc:oracle:thin:@<url>:<port>/<service name>
 
-To run using Maven from project directory:
->mvn spring-boot:run -Drun.arguments="xml"
+To build using Maven from project directory:
+> mvn clean package
 
 To run using jar provide a path to jar file. 
-
 Example:
-> java -Xmx4096m -jar target/cde-xml-dwnld-1.0.0.jar
+> java -Xmx4096m -jar $WORKSPACE/cde-xml-dwnld/target/cde-xml-dwnld-1.0.0.jar
 
 To run upload to FTP site, use run-ftp.sh
 Environment required:
