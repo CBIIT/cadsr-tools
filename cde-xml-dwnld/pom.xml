@@ -41,7 +41,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.4.RELEASE</version>
+		<version>2.7.8</version>
 	</parent>
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
@@ -90,6 +90,20 @@
 					<target>11</target-->
 					<source>1.8</source>
 					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<packageName>gov.nih.nci.cbiit.cadsr.datadump</packageName>
+						</manifest>
+						<manifestEntries>
+							<Created-By>NCI CBIIT</Created-By>
+						</manifestEntries>
+					</archive>
 				</configuration>
 			</plugin>
 			<!--  This is to copy all dependencies libraries to target/lib. Removed if not required -->
