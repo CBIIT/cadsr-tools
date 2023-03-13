@@ -86,7 +86,7 @@ public class XmlCdeDumper extends AbstractCDEDumper {
 				+ "ContextName  ,  ContextVersion  ,  Origin  ,  RegistrationStatus  , \"dateModified\", "
 			+ "DataElementConcept  ,  ValueDomain  ,  ReferenceDocumentsList  ,  ClassificationsList  ,  "
 			+ "AlternateNameList  ,  DataElementDerivation " +
-			"FROM sbrext.DE_CDE1_XML_GENERATOR_749VW where workflowstatus not like ('%RETIRED%') and upper(contextname) not in ('TEST', 'TRAINING')";
+			"FROM ONEDATA_WA.DE_CDE1_XML_GENERATOR_749VW where workflowstatus not like ('%RETIRED%') and upper(contextname) not in ('TEST', 'TRAINING')";
 
 		xmlBean.setQuery(qry);
 		System.out.println("XML Query: " + qry);
