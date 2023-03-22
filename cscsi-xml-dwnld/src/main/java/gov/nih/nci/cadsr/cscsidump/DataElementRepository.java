@@ -37,7 +37,7 @@ public class DataElementRepository {
 	 * @param fn file path and name to write XML.
 	 */
 	public void retrieveWriteClob(String fn) {
-		final String sqlCsCsiClob = "select TEXT from SBREXT.MDSR_GENERATED_XML where SEQ_ID = (select max(SEQ_ID)from SBREXT.MDSR_GENERATED_XML)";
+		final String sqlCsCsiClob = "select TEXT from ONEDATA_WA.CSCSI_444_GENERATED_XML where SEQ_ID = (select max(SEQ_ID)from ONEDATA_WA.CSCSI_444_GENERATED_XML)";
 		BufferedWriter bw = null;
 		Reader clobReader = null;
 		try {
